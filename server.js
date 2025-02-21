@@ -2,6 +2,8 @@ import { Client, GatewayIntentBits } from "discord.js";
 import express from "express";
 import axios from "axios";
 import dotenv from "dotenv";
+app.use(cors({ origin: "https://3vfi-dev.github.io" }));
+
 
 dotenv.config(); // Charge les variables d'environnement
 
