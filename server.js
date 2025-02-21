@@ -12,8 +12,10 @@ app.use(express.json());
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.BOT_TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
-const SITE_URL = "https://3vfi-dev.github.io/"; // Remplace par ton URL GitHub Pages
 app.use(cors({ origin: "https://3vfi-dev.github.io" })); 
+
+const SITE_URL = "https://3vfi-dev.github.io/"; // Remplace par ton URL GitHub Pages
+
 
 client.once("ready", () => {
     console.log(`✅ Bot connecté en tant que ${client.user.tag}`);
