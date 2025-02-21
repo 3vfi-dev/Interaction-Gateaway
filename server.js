@@ -1,10 +1,10 @@
 import { Client, GatewayIntentBits } from "discord.js";
+app.use(cors({ origin: "https://3vfi-dev.github.io" }));
 import express from "express";
-import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
 
-dotenv.config(); 
+dotenv.config();
 
 const app = express();
 app.use(express.json());
@@ -12,13 +12,10 @@ app.use(express.json());
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.BOT_TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
-app.use(cors({ origin: "https://3vfi-dev.github.io" })); 
-
-const SITE_URL = "https://3vfi-dev.github.io/"; 
-
+const SITE_URL = "https://3vfi-dev.github.io/";
 
 client.once("ready", () => {
-    console.log(` Bot connecté en tant que ${client.user.tag}`);
+    console.log(`Bot connecté en tant que ${client.user.tag}`);
 });
 
 client.login(TOKEN);
@@ -42,4 +39,4 @@ app.get("/ping", async (req, res) => {
 });
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`🚀 Serveur en ligne sur le port ${PORT}`));
+app.listen(PORT, () => console.log(`Serveur en ligne sur le port ${PORT}`));
