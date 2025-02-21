@@ -1,9 +1,8 @@
 import { Client, GatewayIntentBits } from "discord.js";
 import express from "express";
+import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
-app.use(cors({ origin: "https://3vfi-dev.github.io" }));
-
 
 dotenv.config(); // Charge les variables d'environnement
 
@@ -14,6 +13,7 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const TOKEN = process.env.BOT_TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
 const SITE_URL = "https://3vfi-dev.github.io/"; // Remplace par ton URL GitHub Pages
+app.use(cors({ origin: "https://3vfi-dev.github.io" })); 
 
 client.once("ready", () => {
     console.log(`✅ Bot connecté en tant que ${client.user.tag}`);
