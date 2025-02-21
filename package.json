@@ -1,7 +1,7 @@
 {
-  "name": "discord-bot",
+  "name": "3vwebsite",
   "version": "1.0.0",
-  "description": "Un bot Discord qui envoie le ping du site",
+  "description": ".",
   "main": "server.js",
   "type": "module",
   "scripts": {
