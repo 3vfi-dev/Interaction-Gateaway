@@ -1,12 +1,13 @@
-import { Client, GatewayIntentBits } from "discord.js";
-app.use(cors({ origin: "https://3vfi-dev.github.io" }));
 import express from "express";
+import cors from "cors";
 import axios from "axios";
 import dotenv from "dotenv";
+import { Client, GatewayIntentBits } from "discord.js";
 
 dotenv.config();
 
 const app = express();
+app.use(cors({ origin: "https://3vfi-dev.github.io" }));
 app.use(express.json());
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
